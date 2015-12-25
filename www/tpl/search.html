@@ -1,0 +1,70 @@
+<div class="bar bar-header bar-calm">
+    <a class="button button-icon icon ion-android-arrow-back" href="#/"></a>
+    <h1 class="title">{{type}}</h1>
+</div>
+<ion-content class="has-header">
+    <div class="row">
+        <div class="col w-search">
+            ชื่อโครงการ : 
+        </div>
+        <div class="col">
+            <label class="item item-input">
+                <input type="Text" placeholder="ค้นหาชื่อโครงการ" width="40%" ng-model="search.name">
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col w-search">
+            จังหวัด :
+        </div>
+        <div class="col list">
+            <label class="item item-select">
+                <select style="max-width: 100%" ng-model="search.selectProvince" ng-change="getDistrict(search.selectProvince)">
+                    <option value="">ทุกจังหวัด</option>
+                  <option ng-repeat="province in Province" value="{{province.id}}">{{province.provinceName}}</option>
+                </select>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col w-search">
+            อำเภอ/เขต :
+        </div>
+        <div class="col list">
+            <label class="item item-select">
+                <select style="max-width: 100%" ng-model="search.seleteDistrict">
+                    <option value="">ทุกอำเภอ/เขต</option>
+                  <option ng-repeat="district in District" value="{{district.id}}">{{district.districtName}}</option>
+                </select>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col w-search">
+            ราคา :
+        </div>
+        <div class="col list">
+            <label class="item item-input">
+                <input type="number" placeholder="ต่ำสุด" width="40%" ng-model="search.maxPrice">
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col w-search">
+            ถึง :
+        </div>
+        <div class="col list">
+            <label class="item item-input">
+                <input type="number" placeholder="สูงสุด" width="40%" ng-model="search.minPrice">
+            </label>
+        </div>
+    </div>
+    <div style="text-align: right; padding: 5px">
+        <!--<button class="button button-stable" style="width: 80px" ng-click="searchList(search)">-->
+        <a ng-href="#/viewList/{{search.name}}/{{search.selectProvince}}/{{search.seleteDistrict}}/{{search.maxPrice}}/{{search.minPrice}}">
+            <button class="button button-stable" style="width: 80px" >
+                Search
+            </button>
+        </a>
+    </div>
+</ion-content>
