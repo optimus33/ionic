@@ -19,14 +19,20 @@ angular.module('myIonicApp3', ['ionic', 'npa.controllers', 'npa.services'])
     
     .state('view', {  
         url: '/view/:homeId',
-        templateUrl: 'tpl/viewDetail.html',  
+        templateUrl: 'tpl/view.html',  
         controller: 'viewCtrl'  
     })
     
     .state('viewList', {  
-        url: '/viewList/:name/:province/:district/:maxprice/:minprice',
+        url: '/viewList/:name/:province/:district/:maxprice/:minprice/:typeSearch',
         templateUrl: 'tpl/viewList.html',  
         controller: 'viewListCtrl'  
+    })
+    
+    .state('viewDetail', {  
+        url: '/viewDetail/:homeId',
+        templateUrl: 'tpl/viewDetail.html',  
+        controller: 'viewDetailCtrl'  
     })
     
     $urlRouterProvider.otherwise("/"); // กรณีอื่นๆ ให้ url อ้างอิง เท่ากับ  / หรือหน้าแรก

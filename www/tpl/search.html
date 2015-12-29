@@ -45,7 +45,7 @@
         </div>
         <div class="col list">
             <label class="item item-input">
-                <input type="number" placeholder="ต่ำสุด" width="40%" ng-model="search.maxPrice">
+                <input type="number" placeholder="สูงสุด" width="40%" ng-model="search.maxPrice">
             </label>
         </div>
     </div>
@@ -55,13 +55,13 @@
         </div>
         <div class="col list">
             <label class="item item-input">
-                <input type="number" placeholder="สูงสุด" width="40%" ng-model="search.minPrice">
+                <input type="number" placeholder="ต่ำสูง" width="40%" ng-model="search.minPrice">
             </label>
         </div>
     </div>
     <div style="text-align: right; padding: 5px">
         <!--<button class="button button-stable" style="width: 80px" ng-click="searchList(search)">-->
-        <a ng-href="#/viewList/{{search.name}}/{{search.selectProvince}}/{{search.seleteDistrict}}/{{search.maxPrice}}/{{search.minPrice}}">
+        <a ng-href="#/viewList/{{search.name}}/{{search.selectProvince}}/{{search.seleteDistrict}}/{{search.maxPrice}}/{{search.minPrice}}/{{typeSearch}}">
             <button class="button button-stable" style="width: 80px" >
                 Search
             </button>

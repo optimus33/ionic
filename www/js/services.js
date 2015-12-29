@@ -47,8 +47,19 @@ angular.module('npa.services', [])
                 );
         },
         getSearchHomeList: function (json){
-            console.log(json);
+//            console.log(json);
             return $http.get('http://10.28.103.98:8686/TestRestWs/rest/homeJSON/getHomeListByJSON/' + json)
+                .then(
+                    function(response){
+                        return response.data;
+                    }, 
+                    function(errResponse){
+                        return $q.reject(errResponse);
+                    }
+                );
+        },
+        getDetail: function (id){
+            return $http.get('http://10.28.103.98:8686/TestRestWs/rest/homeJSON/getDetail/' + id)
                 .then(
                     function(response){
                         return response.data;

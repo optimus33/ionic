@@ -15,8 +15,8 @@ angular.module("npa.controllers", [])
 })
 .controller('searchCtrl', function($scope, $stateParams, Welcome) {
     
-    console.log($stateParams);
     var type = $stateParams.typeSearch;
+    $scope.typeSearch = $stateParams.typeSearch;
     
     if(type == '1')
         $scope.type = 'Condo';
@@ -106,14 +106,64 @@ angular.module("npa.controllers", [])
 })
 
 .controller('viewListCtrl', function($scope, $stateParams, Welcome, $ionicLoading) {
+    $scope.numberOfItemsToDisplay = 5; //โหลดทีเดียวแต่แบ่งโชว์ --1
+
+    var json = JSON.stringify({name : $stateParams.name, province : $stateParams.province, district : $stateParams.district, maxPrice : $stateParams.maxprice, minPrice : $stateParams.minprice, size : $scope.numberOfItemsToDisplay});
+    var type = $stateParams.typeSearch;
+    $scope.Home = [];
     
-    var json = JSON.stringify({name : $stateParams.name, province : $stateParams.province, district : $stateParams.district, maxPrice : $stateParams.maxprice, minPrice : $stateParams.minprice});
+    $scope.linkBank = $stateParams.typeSearch;
+    
+    if(type == '1')
+        $scope.type = 'Condo';
+    else if(type == '2')
+         $scope.type = 'Home';
     
     $ionicLoading.show({
       template: 'Loading...'
     });
     
     Welcome.getSearchHomeList(json)
+        .then(
+            function(data){
+                $scope.Home = data;
+                $ionicLoading.hide();
+            },
+            function(errResponse){
+                console.error('Error while creating user')
+            }
+        )
+
+    $scope.addMoreItem = function() { 
+        if ($scope.Home.length > $scope.numberOfItemsToDisplay)
+            $scope.numberOfItemsToDisplay += 5; 
+            var json = JSON.stringify({name : $stateParams.name, province : $stateParams.province, district : $stateParams.district, maxPrice : $stateParams.maxprice, minPrice : $stateParams.minprice, size : $scope.numberOfItemsToDisplay});
+            
+             Welcome.getSearchHomeList(json)
+                .then(
+                    function(data){
+                        $scope.Home = data;
+                        $ionicLoading.hide();
+                        $scope.$broadcast('scroll.infiniteScrollComplete');
+                    },
+                    function(errResponse){
+                        console.error('Error while creating user')
+                    }
+                )
+        }
+        
+})
+
+.controller('viewDetailCtrl', function($scope, $stateParams, Welcome, $ionicLoading) {
+    $scope.Home = [];
+    var id = $stateParams.homeId;
+    
+    $ionicLoading.show({
+      template: 'Loading...'
+    });
+    
+    
+    Welcome.getDetail(id)
         .then(
             function(data){
                 $scope.Home = data;
