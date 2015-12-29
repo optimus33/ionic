@@ -1,0 +1,67 @@
+
+<ion-content class="scroll-content ionic-scroll has-header">
+     <div width="100%" align="left">
+            <img ng-src="img\Home\welcome\header.jpg" width="100%">
+    </div>
+    <div class="row">
+        <div class="item-input-inset" style="width: 100%; height: 10%;" class="col">
+            <img ng-src="img\Home\welcome\logo.jpg" style="width: 50px">
+             <label class="item item-input" style="margin-left: 20px">
+                    <input type="Text" placeholder="ค้นหาทรัพย์" width="40%">
+            </label>
+            <button class="button button-search">
+              <i class="icon ion-search placeholder-icon"></i>
+            </button>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="item-input-inset bar bar-header bar-positive col" style="width: 35%; height: 5%; top: 20px; border-radius: 15px; margin-left: 5px">
+            อสังหาริมทรัพย์
+        </div>
+    </div>
+    <div class="row">
+        <ion-slide-box 
+            does-continue="true" 
+            slide-interval="3000" 
+            style="width: 100%; height: initial; position: relative; top: -5px"
+            on-slide-changed="slideHasChanged($index)">
+            <ion-slide>
+                <div class="box slide_box">
+                    <a ng-href="#/search/1"><img src="img\icon\png\001.png" width="60"></a>
+                    <a ng-href="#/search/2"><img src="img\icon\png\002.png" width="60"></a>
+                    <a ng-href="#/search/3"><img src="img\icon\png\003.png" width="60"></a>
+                    <a ng-href="#/search/4"><img src="img\icon\png\004.png" width="60"></a>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box slide_box">
+                    <a ng-href="#/search/5"><img src="img\icon\png\005.png" width="60"></a>
+                    <a ng-href="#/search/6"><img src="img\icon\png\006.png" width="60"></a>
+                    <a ng-href="#/search/7"><img src="img\icon\png\007.png" width="60"></a>
+                    <a ng-href="#/search/8"><img src="img\icon\png\008.png" width="60"></a>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box slide_box">
+                    <a ng-href="#/search/9"><img src="img\icon\png\009.png" width="60"></a>
+                    <a ng-href="#/search/10"><img src="img\icon\png\010.png" width="60"></a>
+                    <a ng-href="#/search/11"><img src="img\icon\png\011.png" width="60"></a>
+                    <a ng-href="#/search/12"><img src="img\icon\png\012.png" width="60"></a>    
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+    </div>
+
+    <div class="row">
+        <div class="item-input-inset bar bar-header bar-positive col" style="width: 35%; height: 5%; border-radius: 15px; margin-left: 5px;">
+            ทรัพย์แนะนำ
+        </div>
+    </div>
+    <div class="row" style="background-color: #F0F0F0 repeat">
+        <div class="col-25" ng-repeat="home in HomeList" style="padding-top: 5px; text-align: center">
+            <a ng-href="#/view/{{home.id}}"><img ng-src="{{home.path}}" width="60px"></a>
+            <!--{{home.path}}-->
+        </div>
+    </div>
+</ion-content>
+   

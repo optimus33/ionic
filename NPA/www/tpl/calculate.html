@@ -1,0 +1,66 @@
+<ion-content class="scroll-content ionic-scroll has-header">
+    <p ng-show="item.price.$invalid && !item.price.$pristine">* Test</p>
+    <div class="row" >
+        <div class="col" style="top: 20px; margin-left: 10px">
+            วงเงินกู้
+        </div>
+    </div>
+    <div class="row" >
+        <div style="padding-left: 20px">
+            <label class="item item-input">
+              <input type="text" ng-model="item.price" ng-minlength="5" ng-maxlength="20" required placeholder="Enter a price here"/>
+            </label>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col" style="top: 20px; margin-left: 10px">
+            อัตราดอกเบี้ยรายปี
+        </div>
+    </div>
+    <div class="row" >
+        <div style="padding-left: 20px">
+            <label class="item item-input">
+              <input type="text" ng-model="item.interest" 
+                     ng-required="boolean"
+                     ng-minlength="number"
+                     ng-maxlength="number" 
+                     placeholder="Enter a price here"/>
+            </label>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col" style="top: 20px; margin-left: 10px">
+            เงื่อนไขการกู้ยืม(ปี)
+        </div>
+    </div>
+    <div class="row" style="padding-left: 25px">
+        <div class="col year-begin" ng-click="year10()" id="text1">
+            10
+        </div>
+        <div class="col year" id="text2" ng-click="year15()">
+            15
+        </div>
+        <div class="col year" id="text3" ng-click="year20()">
+            20
+        </div>
+        <div class="col year" id="text4" ng-click="year25()">
+            25
+        </div>
+        <div class="col year-last" ng-click="year30()" id="text5">
+            30
+        </div>
+    </div>
+<!--    <div class="row" >
+        <div style="padding-left: 20px">
+            <label class="item item-input">
+              <input type="text" ng-model="item.year" placeholder="Enter a price here"/>
+            </label>
+        </div>
+    </div>-->
+    
+    <span style="padding-left: 20px" ng-bind="(item.price * item.interest)/(year*12) | currency:'THB '" />
+    
+    
+</ion-content>
+
+

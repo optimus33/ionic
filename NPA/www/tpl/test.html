@@ -1,0 +1,52 @@
+<ion-content class="scroll-content ionic-scroll has-header">
+    <div class="row" >
+        <div class="col" style="top: 20px; margin-left: 10px">
+            Test Rest
+        </div>
+    </div>
+    <div ng-repeat="test in TestRest" class="row">
+        <div class="col">
+            {{test.title}}
+        </div>
+        <div class="col">
+            {{test.singer}}
+        </div>
+    </div>
+    </br>
+    
+    
+    <div class="row">
+        <div class="col-10" style="border: 1px solid blue; text-align: center; font-size: 10.5px;">
+            ID.
+        </div>
+        <div class="col-34" style="border: 1px solid blue; text-align: center; font-size: 10.5px;">
+            First name
+        </div>
+        <div class="col-34" style="border: 1px solid blue; text-align: center; font-size: 10.5px;">
+            Last name
+        </div>
+        <div class="col-20" style="border: 1px solid blue; text-align: center; font-size: 10.5px;">
+            Address
+        </div>
+    </div>
+    <div ng-repeat="test2 in TestRest2" class="row">
+        <div class="col-10" style="border: 1px solid blue; text-align: center; font-size: 10.5px;">
+            {{test2.id}}
+        </div>
+        <div class="col-34" style="border: 1px solid blue; font-size: 10.5px;">
+            {{test2.fNmae}}
+        </div>
+        <div class="col-34" style="border: 1px solid blue; font-size: 10.5px;">
+            {{test2.lName}}
+        </div>
+        <div class="col-20" style="border: 1px solid blue; font-size: 10.5px;">
+            {{test2.address}}
+        </div>
+    </div>
+    
+    <button ng-click="testShareSheet()">Test Share</button>
+    
+    
+</ion-content>
+
+

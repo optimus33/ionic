@@ -1,0 +1,138 @@
+/* Empty. Add your own CSS if you like */
+#map {
+  width: 100%;
+  height: 50%;
+}
+
+.scroll {
+  height: 100%;
+}
+
+.slide_box{
+	padding-top: 35px;
+	padding-bottom: 40px;
+	text-align: center;
+}
+
+.wide-as-needed {
+  overflow: scroll;
+  white-space: nowrap;
+}
+
+.bar.bar-loading {
+  display: block;
+  height: 24px;
+  
+  /* starts right below a normal header */
+  top: 44px;
+  
+  /* make the text centered vertically and horizontally */
+  text-align: center;
+  padding: 0;
+  line-height: 24px;
+
+  /* transition 'sliding down' (check below)*/
+  -webkit-transition: 200ms all;
+}
+
+.button-search{
+	border: 0px;
+	background-color : white;
+}
+
+.button-search{
+	border: 0px;
+	background-color : white;
+}
+
+
+.button-search.activated{ 
+	border: 0px;
+	background-color : white;
+	box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+}
+
+.item-input-inset2{
+	margin-top:-30px; 
+	width: 100%; 
+	height: 10%; 
+	position: relative; 
+	padding: 10.667px; 
+	-ms-flex-align: center; 
+	-webkit-align-items: center; 
+	-moz-align-items: center;
+}
+
+input[type="text"]{
+	height: 20px;
+}
+
+.button:last{
+	right: 0px;
+}
+
+
+/* 
+ * make the content's top changes animate.
+ * might not always look good, but looks
+ * good when our loader is added & removed
+ */
+.has-header {
+  -webkit-transition: 200ms top;
+}
+.has-header.has-loading {
+  /* 44px (header) + 24px */
+  top: 68px;
+}
+
+/* make loading bar slide up/down */
+.bar-loading.ng-enter,
+.bar-loading.ng-leave.ng-leave-active {
+  height: 0;
+  border-width: 0px;
+}
+.bar-loading.ng-enter.ng-enter-active,
+.bar-loading.ng-leave {
+  height: 24px;
+  border-width: 1px;
+}
+
+.year-begin{
+    border: 1px solid blue; 
+    width: 25px; 
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.year{
+    border: 1px solid blue; 
+    width: 25px; 
+    text-align: center;  
+}
+.year-last{
+    border: 1px solid blue; 
+    width: 25px; 
+    text-align: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.errors p {
+  color: red;
+}
+
+.w-search{
+    padding: 10px; 
+    width: 31%; 
+    flex: 0 0 31%;
+}
+
+.w-search-15{
+    padding: 10px; 
+    width: 15%; 
+    flex: 0 0 15%;
+}
+
+.item h2{
+    white-space: initial;
+}

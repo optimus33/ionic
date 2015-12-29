@@ -1,0 +1,65 @@
+<ion-view title="View" ng-controller="home1Ctrl"  data-ng-init="initialize()">
+    
+    <div class="bar bar-header bar-balanced">
+        <a nav-clear href="#/loan" class="button button-icon icon ion-android-arrow-back"></a>  
+        <h1 class="title">bar-balanced</h1>
+    </div>
+    <ion-content class="scroll-content ionic-scroll has-header" style="text-align: center">
+<!--        <form name="testForm" novalidate ng-submit="submit()">
+
+            <div class="list">
+              <label class="item item-input">
+                <span class="input-label">First Name</span>
+                <input type="text" name="firstname" ng-model="data.firstname" ng-required="false" ng-minlength="4" ng-maxlength="10">
+              </label>
+
+              <div class="item errors">
+                <p>firstname Errors:</p>
+                <p ng-show="testForm.firstname.$error.required">firstname is required</p>
+                <p ng-show="testForm.firstname.$error.minlength">firstname is too short</p>
+                <p ng-show="testForm.firstname.$error.maxlength">firstname is too long</p>
+              </div>              
+
+              <label class="item item-input">
+                <span class="input-label">Last Name</span>
+                <input type="text" name="lastname" ng-model="data.lastname" required ng-minlength="4" ng-maxlength="10">
+              </label>
+
+              <div class="item errors">
+                <p>lastname Errors:</p>
+                <p ng-show="testForm.lastname.$error.required">lastname is required</p>
+                <p ng-show="testForm.lastname.$error.minlength">lastname is too short</p>
+                <p ng-show="testForm.lastname.$error.maxlength">lastname is too long</p>
+              </div>              
+
+            </div>        
+
+            <button class="button button-balanced">Submit</button> <span>Submitted {{data.submissions}} times.  Fields Submitted : {{data.summary}}</span>
+
+        </form>-->
+
+
+        <form name="myForm" novalidate>
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input type="text" name="username" ng-model="username" ng-minlength="5" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="text" name="password" ng-model="password" ng-minlength="6" required>
+                </label>
+            </div>
+            <div class="padding">
+                <p ng-show="myForm.username.$error.required">* Username is required</p>
+                <p ng-show="myForm.username.$invalid && !myForm.username.$pristine">* Username must be an email address</p>
+                <p ng-show="myForm.username.$error.minlength">* Username must be longer than 5 characters</p>
+                <p ng-show="myForm.password.$error.required">* Password is required</p>
+                <p ng-show="myForm.password.$error.minlength">* Password must be longer than 6 characters</p>
+            </div>
+            <div class="padding">
+                <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit(username)">Submit</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
