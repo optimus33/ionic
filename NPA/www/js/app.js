@@ -35,6 +35,13 @@ angular.module('myIonicApp3', ['ionic', 'npa.controllers', 'npa.services'])
         controller: 'viewDetailCtrl'  
     })
     
+    .state('map', { 
+        url: '/map',
+        templateUrl: 'tpl/map.html',
+        controller: 'mapCtrl',
+
+    })
+    
     $urlRouterProvider.otherwise("/"); // กรณีอื่นๆ ให้ url อ้างอิง เท่ากับ  / หรือหน้าแรก
     
     
